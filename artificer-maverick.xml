@@ -136,7 +136,7 @@
 		</description>
 		<sheet display="false" />
         <spellcasting name="Breakthrough" extend="true">
-			<extend>Wizard</extend>
+			<extend known="true">Wizard</extend>
 		</spellcasting>
 		<!--<rules>
 			<select type="Spell" name="Breakthrough Spell (Wizard)" supports="0,Wizard" />
