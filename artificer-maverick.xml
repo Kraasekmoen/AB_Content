@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Maverick Artificer Specialization</name>
+        <update version="0.0.1">
+            <file name="artificer-maverick.xml" url="https://raw.githubusercontent.com/community-elements/elements-reddit/master/reddit/reddit-unearthed-arcana/blazing-dawn-players-companion/artificer-firescrapper.xml" />
+        </update>
+    </info>
+    
+    <element name="Maverick" type="Archetype" source="Exploring Eberron" id="ID_JONOMAN3000_BDPC_ARCHETYPE_ARTIFICER_MAVERICK">
+        <supports>Artificer Specialist</supports>
+        <description>
+            <p>In the world of artifice, the Maverick is a jack of all trades and master of none. A Maverick is always experimenting with new designs, forever abandoning yesterday’s work in pursuit of a new obsession. While often dismissed by other artificers as eccentric amateurs, in their refusal to follow established tradition, a Maverick may stumble on remarkable breakthroughs—though their idiosyncratic techniques can rarely be replicated by others.</p>
+            <p class="indent"></p>
+            <div element="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_ARCANE_BREAKTHROUGHS" />
+            <div element="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_CANTRIP_SPECIALIST" />
+            <div element="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_CANTRIP_SAVANT" />
+            <div element="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_SUPERIOR_BREAKTHROUGHS" />
+            <div element="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_WORK_IN_PROGRESS" />
+            <div element="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_FINAL_BREAKTHROUGH" />
+        </description>
+        <sheet display="false">
+            <description></description>
+        </sheet>
+        
+        <rules>
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_ARCANE_BREAKTHROUGHS" level="3" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_CANTRIP_SPECIALIST" level="3" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_CANTRIP_SAVANT" level="5" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_SUPERIOR_BREAKTHROUGHS" level="9" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_WORK_IN_PROGRESS" level="9" />
+            <grant type="Archetype Feature" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_FINAL_BREAKTHROUGH" level="15" />
+        </rules>
+        
+    </element>
+        <element name="Arcane Breakthroughs" type="Archetype Feature" source="Exploring Eberron" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_ARCANE_BREAKTHROUGHS">
+            <description>
+                <p>Starting at 3rd level, you gain amazing insights into spell effects beyond the reach of most artificers. Choose one of the following classes: bard, cleric, druid, paladin, ranger, sorcerer, warlock, or wizard. This class’s spells become part of your Breakthrough spell list. You can choose an additional class and add its spells to your Breakthrough spell list at 5th, 9th, 13th, and 17th levels.</p>
+                <p class="indent">When you change your list of prepared artificer spells after a long rest, you can prepare an additional 1st-level spell. This spell must be from your Breakthrough spell list. When you reach certain levels in this class, you increase the number of Breakthrough spells that you can prepare. You can prepare an additional 2nd-level spell at 5th level, an additional 3rd-level spell at 9th level, an additional 4th-level spell at 13th level, and an additional 5th-level spell at 17th level. These prepared spells don’t count against the number of artificer spells you prepare.</p>
+                <p class="indent">When you cast a spell you’ve prepared using this feature, it’s considered to be an artificer spell for you, and Intelligence is your spellcasting ability for it. When you swap a prepared Breakthrough spell for a new spell, you lose any ongoing benefits from having cast it (such as a steed summoned by find steed).</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <spellcasting name="Breakthrough" ability="Intelligence" prepare="true">
+                <list known="true"></list>
+            </spellcasting>
+            <rules>
+			    <select type="Archetype Feature" name="Breakthrough Spell Class" supports="Arcane Breakthroughs" level="3"/>
+			    <select type="Archetype Feature" name="Breakthrough Spell Class" supports="Arcane Breakthroughs" level="5"/>
+			    <select type="Archetype Feature" name="Breakthrough Spell Class" supports="Arcane Breakthroughs" level="9"/>
+			    <select type="Archetype Feature" name="Breakthrough Spell Class" supports="Arcane Breakthroughs" level="13"/>
+			    <select type="Archetype Feature" name="Breakthrough Spell Class" supports="Arcane Breakthroughs" level="17"/>
+
+       			<stat name="breakthrough:spellcasting:slots:1" value="1" level="3" />
+       			<stat name="breakthrough:spellcasting:slots:2" value="1" level="5" />
+       			<stat name="breakthrough:spellcasting:slots:3" value="1" level="9" />
+       			<stat name="breakthrough:spellcasting:slots:4" value="1" level="13" />
+       			<stat name="breakthrough:spellcasting:slots:5" value="1" level="17" />
+
+			    <stat name="breakthrough:spellcasting:prepare" value="level:artificer:half" />
+
+		    </rules>
+        </element>
+        <element name="Cantrip Specialist" type="Archetype Feature" source="Exploring Eberron" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_CANTRIP_SPECIALIST">
+            <description>
+                <p>You excel at producing minor magical effects—and at abandoning your current projects to pursue new ideas. Starting at 3rd level you gain the following benefits:</p>
+                <ul>
+                    <li>You know one additional cantrip beyond what’s normally allowed for an artificer of your level.</li>
+                    <li>When you finish a short rest (instead of when you gain a level in this class), you can replace one of the artificer cantrips you know with another cantrip from the artificer spell list or your Breakthrough spell list. This cantrip is considered an artificer cantrip for you.</li>
+                </ul>    
+            </description>
+            <sheet usage="1/Short Rest">
+                <description>When you finish a short rest, you can replace one of the artificer cantrips you know with another cantrip from the artificer spell list or your Breakthrough spell list. This cantrip is considered an artificer cantrip for you.</description>
+            </sheet>
+            <rules>
+			    <select type="Spell" name="Additional Cantrip (Maverick)" supports="0,Artificer" spellcasting="Artificer" level="3" />
+		    </rules>
+        </element>
+        <element name="Cantrip Savant" type="Archetype Feature" source="Exploring Eberron" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_CANTRIP_SAVANT">
+            <description>
+                <p>Starting at 5th level, you continue to develop your talent for the simplest spells. You gain the following benefits:</p>
+                <ul>
+                    <li>When casting an artificer cantrip, you gain a +1 bonus to attack rolls and to your artificer spell save DC unless your spellcasting focus grants a higher bonus. This bonus increases when you reach certain levels in this class, increasing to +2 at 9th level and +3 at 15th level.</li>
+                    <li>As an action, you can replace an artificer cantrip you know with a different cantrip from the artificer spell list or your Breakthrough spell list. Once you use this feature, you can’t use it again until you finish a long rest.</li>
+                </ul>
+            </description>
+            <sheet>
+                <description>When casting an artificer cantrip, you gain a +1 bonus to attack rolls and to your artificer spell save DC unless your spellcasting focus grants a higher bonus. This bonus increases when you reach certain levels in this class, increasing to +2 at 9th level and +3 at 15th level.</description>
+            </sheet>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>As an action, you can replace an artificer cantrip you know with a different cantrip from the artificer spell list or your Breakthrough spell list. Once you use this feature, you can’t use it again until you finish a long rest.</description>
+            </sheet>
+        </element>
+        <element name="Superior Breakthrough" type="Archetype Feature" source="Exploring Eberron" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_SUPERIOR_BREAKTHROUGHS">
+            <description>
+                <p>Starting at 9th level, when you cast one of the spells you prepared with Arcane Breakthroughs, you can do so as if the spell was cast using a spell slot two levels higher than the spell slot you expend.</p>
+                <p class="indent">You can use this feature a number of times equal to your Intelligence modifier (minimum of 1). You regain all expended uses after you finish a long rest.</p>
+            </description>
+            <sheet usage="Int Modifier/Long Rest">
+                <description>When you cast one of the spells you prepared with Arcane Breakthroughs, you can do so as if the spell was cast using a spell slot two levels higher than the spell slot you expend.</description>
+            </sheet>
+        </element>
+        <element name="Work in Progress" type="Archetype Feature" source="Exploring Eberron" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_WORK_IN_PROGRESS">
+            <description>
+                <p>Starting at 9th level, you can ready half-formed projects for easy completion when needed. As an action, you can replace any prepared artificer spell with any other spell from the artificer spell list, which then counts as a prepared spell for you.</p>
+                <p class="indent">Once you use this feature, you can’t use it again until you finish a short or a long rest.</p>
+            </description>
+            <sheet action="Action" usage="1/Long Rest">
+                <description>You can replace any prepared artificer spell with any other spell from the artificer spell list, which then counts as a prepared spell for you.</description>
+            </sheet>
+            <sheet usage="1/Long Rest">
+                <description>You can ready half-formed projects for easy completion when needed.</description>
+            </sheet>
+        </element>
+        <element name="Final Breakthrough" type="Archetype Feature" source="Exploring Eberron" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_FINAL_BREAKTHROUGH">
+            <description>
+                <p>At 15th level, you gain one additional spell slot of each spell level you can prepare. These spell slots can only be used to cast the bonus spells granted by your Arcane Breakthroughs. As you gain levels in this class and are able to prepare 5th-level artificer spells, you gain an additional spell slot of that level.</p>
+            </description>
+            <sheet display="false">
+                <description></description>
+            </sheet>
+            <rules>
+       			<stat name="breakthrough:spellcasting:slots:1" value="1" level="15" />
+       			<stat name="breakthrough:spellcasting:slots:2" value="1" level="15" />
+       			<stat name="breakthrough:spellcasting:slots:3" value="1" level="15" />
+       			<stat name="breakthrough:spellcasting:slots:4" value="1" level="15" />
+       			<stat name="breakthrough:spellcasting:slots:5" value="1" level="17" />
+            </rules>
+        </element>
+
+    <element name="Wizard" type="Archetype Feature" source="Exploring Eberron" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_ARCANE_BREAKTHROUGHS_WIZARD">
+		<supports>Arcane Breakthroughs</supports>
+		<description>
+			<p>You gain access to Wizard spells for your Breakthrough List.</p>
+		</description>
+		<sheet display="false" />
+        <spellcasting name="Breakthrough" extend="true">
+			<extend>Wizard</extend>
+		</spellcasting>
+		<!--<rules>
+			<select type="Spell" name="Breakthrough Spell (Wizard)" supports="0,Wizard" />
+		</rules>-->
+	</element>
+    <element name="Cleric" type="Archetype Feature" source="Exploring Eberron" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_ARCANE_BREAKTHROUGHS_CLERIC">
+		<supports>Arcane Breakthroughs</supports>
+		<description>
+			<p>You gain access to Cleric spells for your Breakthrough List.</p>
+		</description>
+		<sheet display="false" />
+        <spellcasting name="Breakthrough" extend="true">
+			<extend known="true">Cleric</extend>
+		</spellcasting>
+	</element>
+    <element name="Bard" type="Archetype Feature" source="Exploring Eberron" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_ARCANE_BREAKTHROUGHS_BARD">
+		<supports>Arcane Breakthroughs</supports>
+		<description>
+			<p>You gain access to Bard spells for your Breakthrough List.</p>
+		</description>
+		<sheet display="false" />
+        <spellcasting name="Breakthrough" extend="true">
+			<extend known="true">Bard</extend>
+		</spellcasting>
+	</element>
+
+    <element name="Druid" type="Archetype Feature" source="Exploring Eberron" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_ARCANE_BREAKTHROUGHS_DRUID">
+		<supports>Arcane Breakthroughs</supports>
+		<description>
+			<p>You gain access to Druid spells for your Breakthrough List.</p>
+		</description>
+		<sheet display="false" />
+        <spellcasting name="Breakthrough" extend="true">
+			<extend known="true">Druid</extend>
+		</spellcasting>
+	</element>
+    <element name="Paladin" type="Archetype Feature" source="Exploring Eberron" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_ARCANE_BREAKTHROUGHS_PALADIN">
+		<supports>Arcane Breakthroughs</supports>
+		<description>
+			<p>You gain access to Paladin spells for your Breakthrough List.</p>
+		</description>
+		<sheet display="false" />
+        <spellcasting name="Breakthrough" extend="true">
+			<extend known="true">Paladin</extend>
+		</spellcasting>
+	</element>
+    <element name="Ranger" type="Archetype Feature" source="Exploring Eberron" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_ARCANE_BREAKTHROUGHS_RANGER">
+		<supports>Arcane Breakthroughs</supports>
+		<description>
+			<p>You gain access to Ranger spells for your Breakthrough List.</p>
+		</description>
+		<sheet display="false" />
+        <spellcasting name="Breakthrough" extend="true">
+			<extend known="true">Ranger</extend>
+		</spellcasting>
+	</element>
+    <element name="Sorcerer" type="Archetype Feature" source="Exploring Eberron" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_ARCANE_BREAKTHROUGHS_SORCERER">
+		<supports>Arcane Breakthroughs</supports>
+		<description>
+			<p>You gain access to Sorcerer spells for your Breakthrough List.</p>
+		</description>
+		<sheet display="false" />
+        <spellcasting name="Breakthrough" extend="true">
+			<extend known="true">Sorcerer</extend>
+		</spellcasting>
+	</element>
+    <element name="Warlock" type="Archetype Feature" source="Exploring Eberron" id="ID_JONOMAN3000_BDPC_ARCHETYPE_FEATURE_MAVERICK_ARCANE_BREAKTHROUGHS_WARLOCK">
+		<supports>Arcane Breakthroughs</supports>
+		<description>
+			<p>You gain access to Warlock spells for your Breakthrough List.</p>
+		</description>
+		<sheet display="false" />
+        <spellcasting name="Breakthrough" extend="true">
+			<extend known="true">Warlock</extend>
+		</spellcasting>
+	</element>
+    
+</elements>
