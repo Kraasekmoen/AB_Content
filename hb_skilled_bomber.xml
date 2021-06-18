@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>HB Skilled Bomber</name>
+		<update version="0.0.1">
+			<file name="hb_skilled_bomber.xml" url="https://raw.githubusercontent.com/aurorabuilder/elements/master/third-party/kobold-press/deep-magic/20-alkemancy.xml" />
+		</update>
+	</info>
+<element name="Skilled Bomber (HB)" type="Feat" source="HB Skilled Bomber" id="ID_KBP_DMA_FEAT_SKILLED_BOMBER_HB">
+		<description>
+			<p>You are skilled in the creation and use of bombs and explosive decives. You gain the following benefits.</p>
+			<ul>
+				<li>Increase your Dexterity score by 1, to a maximum of 20.</li>
+				<li>You gain proficiency with bomb-creation, and using bombs as weapons. </li>
+				<li>You can add your Dexterity modifier to attack rolls made with bombs. </li>
+			</ul>
+		</description>
+		<sheet>
+			<description>You have proficiency in creating bombs, and using them as weapons.
+			You can add your Dexterity modifier to attack rolls made with bombs.
+            </description>
+		</sheet>
+		<rules>
+			<stat name="dexterity" value="1" />
+		</rules>
+	</element>
+</elements>
