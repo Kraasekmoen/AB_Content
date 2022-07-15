@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Custom Mount Collection</name>
+        <update version="0.1.0">
+            <file name="item-custom-mount.xml" url="https://raw.githubusercontent.com/Kraasekmoen/AB_Content/main/item-custom-mount.xml" />
+        </update>
+    </info>
+
+    <element name="Warox" type="Item" source="Player’s Handbook" id="ID_WOTC_PHB_ITEM_WAROX">
+		<description>
+			<p><strong><em>Speed.</em></strong> 45 ft.<br/><strong><em>Carrying Capacity.</em></strong> 700 lb.</p>
+		</description>
+		<setters>
+			<set name="category">Mounts &amp; Vehicles</set>
+			<set name="cost" currency="gp">300</set>
+			<set name="weight" lb="0">—</set>
+			<set name="type">Mount</set>
+		</setters>
+	</element>
+
+<elements>
